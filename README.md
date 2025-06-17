@@ -308,10 +308,6 @@ npm run server
 npm run client
 ```
 
-**🚀 Live Demo**: [Deploy your URL here]  
-**💻 Repository**: [Your GitHub URL here]  
-**🎥 Video Demo**: [Optional demo video]
-
 ---
 
 *"In the neon-lit alleys of the internet, memes are the new currency and vibes are the ultimate hack." - Anonymous Cyberpunk* 💀 
