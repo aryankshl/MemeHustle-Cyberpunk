@@ -4,7 +4,6 @@ import { Toaster, toast } from 'react-hot-toast';
 import { 
   Plus, 
   TrendingUp, 
-  Zap, 
   Users, 
   DollarSign, 
   Heart, 
@@ -21,6 +20,15 @@ const socket = io(process.env.REACT_APP_SERVER_URL || 'http://localhost:5001');
 // API base URL
 const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 
+// Terminal messages constant
+const terminalMessages = [
+  'ACCESSING MEME DATABASE...',
+  'NEURAL LINK ESTABLISHED',
+  'HACK THE PLANET! 💀',
+  'LOADING CYBERPUNK VIBES...',
+  'MEMEHUSTLE.EXE RUNNING'
+];
+
 function App() {
   const [memes, setMemes] = useState([]);
   const [leaderboard, setLeaderboard] = useState([]);
@@ -30,13 +38,6 @@ function App() {
   
   // Terminal effect state
   const [terminalText, setTerminalText] = useState('');
-  const terminalMessages = [
-    'ACCESSING MEME DATABASE...',
-    'NEURAL LINK ESTABLISHED',
-    'HACK THE PLANET! 💀',
-    'LOADING CYBERPUNK VIBES...',
-    'MEMEHUSTLE.EXE RUNNING'
-  ];
 
   // Fetch memes
   const fetchMemes = async () => {
