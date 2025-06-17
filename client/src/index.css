@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cyberpunk Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a0a0a;
+  color: #00ffff;
+  overflow-x: hidden;
+}
+
+/* Cyberpunk scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+}
+
+/* Glitch text effect */
+@layer components {
+  .glitch-text {
+    position: relative;
+    color: #00ffff;
+    font-weight: bold;
+  }
+  
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch-text::before {
+    animation: glitch-1 0.3s infinite;
+    color: #ff00ff;
+    z-index: -1;
+  }
+  
+  .glitch-text::after {
+    animation: glitch-2 0.3s infinite;
+    color: #00ff00;
+    z-index: -2;
+  }
+
+  /* Neon button component */
+  .neon-button {
+    @apply px-6 py-3 border-2 border-neon-cyan bg-transparent text-neon-cyan font-cyber uppercase tracking-wide transition-all duration-300 hover:bg-neon-cyan hover:text-cyber-dark hover:shadow-neon transform hover:scale-105;
+  }
+
+  .neon-button-pink {
+    @apply px-6 py-3 border-2 border-neon-pink bg-transparent text-neon-pink font-cyber uppercase tracking-wide transition-all duration-300 hover:bg-neon-pink hover:text-cyber-dark hover:shadow-neon transform hover:scale-105;
+  }
+
+  /* Cyber card */
+  .cyber-card {
+    @apply bg-cyber-gray border border-neon-cyan/20 rounded-lg p-4 shadow-cyber backdrop-blur-sm;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.4));
+  }
+
+  /* Terminal effect */
+  .terminal-text {
+    @apply font-matrix text-neon-green;
+    text-shadow: 0 0 10px #00ff00;
+  }
+
+  /* Neon glow */
+  .neon-glow {
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+}
+
+/* Glitch animations */
+@keyframes glitch-1 {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Matrix rain effect */
+.matrix-bg {
+  background: 
+    radial-gradient(ellipse at center, rgba(0,255,0,0.1) 0%, transparent 70%),
+    linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,255,0,0.03) 2px,
+      rgba(0,255,0,0.03) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,255,0,0.03) 2px,
+      rgba(0,255,0,0.03) 4px
+    );
+}
+
+/* Cyber grid overlay */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Loading spinner */
+.cyber-spinner {
+  border: 3px solid rgba(0, 255, 255, 0.3);
+  border-top: 3px solid #00ffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #00ffff;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), cursor-blink 1s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes cursor-blink {
+  0%, 50% { border-color: #00ffff; }
+  51%, 100% { border-color: transparent; }
+} 

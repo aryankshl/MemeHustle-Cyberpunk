@@ -1,0 +1,19 @@
+{
+  "name": "memehustle-cyberpunk",
+  "version": "1.0.0",
+  "description": "Cyberpunk AI Meme Marketplace - Ship fast, break rules",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "keywords": ["meme", "cyberpunk", "ai", "blockchain", "neon"],
+  "author": "CyberPunk Hacker",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+} 
