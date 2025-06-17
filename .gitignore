@@ -69,7 +69,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+.next/public
 
 # Storybook build outputs
 .out
@@ -99,4 +99,4 @@ Thumbs.db
 .vercel
 
 # Local development
-.env.example 
+# .env.example should be committed to show required variables 

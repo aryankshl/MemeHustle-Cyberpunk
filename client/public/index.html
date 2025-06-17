@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#00ffff" />
+    <meta
+      name="description"
+      content="MemeHustle - Cyberpunk AI Meme Marketplace. Hack the Matrix, Trade Memes, HODL the Vibes!"
+    />
+    <title>MemeHustle - Cyberpunk Meme Marketplace 💀</title>
+    
+    <!-- Cyberpunk favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>" />
+    
+    <!-- Preload cyberpunk fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+      /* Prevent flash of unstyled content */
+      body {
+        background: #0a0a0a;
+        color: #00ffff;
+        font-family: 'Courier New', monospace;
+      }
+      
+      /* Loading animation */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .cyber-loader {
+        border: 3px solid rgba(0, 255, 255, 0.3);
+        border-top: 3px solid #00ffff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loader-text {
+        color: #00ffff;
+        font-family: 'Courier New', monospace;
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this cyberpunk chaos.</noscript>
+    
+    <!-- Initial loading screen -->
+    <div class="initial-loader" id="initial-loader">
+      <div>
+        <div class="cyber-loader"></div>
+        <div class="loader-text">
+          INITIALIZING NEURAL LINK...<br>
+          💀 HACK THE PLANET 💀
+        </div>
+      </div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Remove loader when React loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loader = document.getElementById('initial-loader');
+          if (loader) {
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.5s';
+            setTimeout(() => loader.remove(), 500);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html> 

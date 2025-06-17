@@ -1,31 +1,26 @@
 {
   "version": 2,
   "name": "memehustle-cyberpunk",
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    },
-    {
-      "src": "server/index.js",
-      "use": "@vercel/node"
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/build",
+  "installCommand": "npm install && cd client && npm install && cd ../server && npm install",
+  "functions": {
+    "server/index.js": {
+      "runtime": "nodejs18.x"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/server/index.js"
+      "source": "/api/(.*)",
+      "destination": "/server/index.js"
     },
     {
-      "src": "/socket.io/(.*)",
-      "dest": "/server/index.js"
+      "source": "/socket.io/(.*)",
+      "destination": "/server/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/client/build/$1"
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ]
 } 
